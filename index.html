@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Workout Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+            color: #333;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        main {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .workout-form {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .workout-form h2 {
+            margin: 0 0 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4a90e2;
+        }
+        .workout-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .workout-form input, .workout-form select, .workout-form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .workout-form input:focus, .workout-form select:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        .workout-form button {
+            background-color: #4a90e2;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        .workout-form button:hover {
+            background-color: #357ab7;
+        }
+        .workout-list h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+        .workout-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .workout-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .workout-item p {
+            margin: 5px 0 0;
+            color: #555;
+        }
+        .workout-item button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .workout-item button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Personal Workout Planner</h1>
+    </header>
+    <main>
+        <div class="workout-form">
+            <h2>Create a New Workout</h2>
+            <form id="workoutForm">
+                <label for="workoutName">Workout Name</label>
+                <input type="text" id="workoutName" name="workoutName" placeholder="e.g., Incline Bench" required>
+                
+                <label for="exerciseType">Exercise Type</label>
+                <select id="exerciseType" name="exerciseType" required>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Flexibility">Flexibility</option>
+                    <option value="Balance">Balance</option>
+                </select>
+                
+                <label for="repsOrDuration">Reps/Duration</label>
+                <input type="text" id="repsOrDuration" name="repsOrDuration" placeholder="e.g., 3 sets of 10 reps / 20 minutes" required>
+
+                
+                <label for="workoutDay">Assign to Day</label>
+                <select id="workoutDay" name="workoutDay" required>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+                
+                <button type="submit">Add Workout</button>
+            </form>
+        </div>
+        
+        <div class="workout-list">
+            <h2>My Workouts</h2>
+            <div id="workoutItems">
+                <!-- Workout items will appear here -->
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
